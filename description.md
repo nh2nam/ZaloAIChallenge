@@ -1,6 +1,6 @@
 ## Data
 [Rulebook](rulebook.md) and [Calendar](calendar.csv) are used for all corporation  
-Each corporation has different README
+Each corporation has different README  
 Input:
 
  • A data package for one business: one or more files (.csv, .xlsx, .sqlite) plus a short README.md describing the business.
@@ -44,12 +44,11 @@ Output — one line of submission.jsonl:
 | abstain | Agent chủ động không trả lời | Trạng thái từ chối | Được tính điểm là bỏ phiếu trắng (abstain) bất kể phần tham chiếu là gì|
 
   
-## Score
-Thang điểm (Score)  
+## Score   
 Chỉ số đánh giá trên bảng xếp hạng là Độ chính xác bị phạt (Penalized Accuracy - PA) tính trên $N$ câu hỏi của bộ dữ liệu thử nghiệm:  
-$$\text{PA} = \frac{1}{N} \sum_{i=1}^{N} s_i$$  
+    $$\text{PA} = \frac{1}{N} \sum_{i=1}^{N} s_i$$  
 Trong đó, điểm số $s_i$ cho từng câu hỏi $i$ được tính như sau:  
-$$s_i = \begin{cases} 1 & \text{khi câu trả lời } i \text{ đúng} \\ 0 & \text{khi bỏ qua (abstain) câu hỏi } i \\ -1 & \text{khi câu trả lời } i \text{ sai} \end{cases}$$  
+    $$s_i = \begin{cases} 1 & \text{khi câu trả lời } i \text{ đúng} \\  0 & \text{khi bỏ qua (abstain) câu hỏi } i \\  -1 & \text{khi câu trả lời } i \text{ sai} \end{cases}$$
 Tóm tắt chính:  
 - Đúng: $+1$ điểm.
 - Bỏ qua (Abstain): $0$ điểm.
